@@ -13,6 +13,8 @@ import { SeriesComponent } from './series/series.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComicsComponent } from './comics/comics.component';
 import { DasboardComponent } from './dasboard/dasboard.component';
+import { MaterialModule } from './material/material.module';
+import { GeneralCardComponent } from './shared/general-card/general-card.component';
 
 @NgModule({
   declarations: [
@@ -23,16 +25,18 @@ import { DasboardComponent } from './dasboard/dasboard.component';
     StoriesComponent,
     SeriesComponent,
     ComicsComponent,
-    DasboardComponent
+    DasboardComponent,
+    GeneralCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSliderModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule, //Material Module seperated
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

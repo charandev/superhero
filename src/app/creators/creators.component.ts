@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { MservicesService } from '../mservices.service';
+import { MarvelService } from '../mservices.service';
 
 @Component({
   selector: 'app-creators',
   templateUrl: './creators.component.html',
-  styleUrls: ['./creators.component.sass']
+  styleUrls: ['./creators.component.scss'],
 })
 export class CreatorsComponent implements OnInit {
-
-  constructor( private service: MservicesService) {
- }
-
+  creatorsData: any;
+  constructor(private service: MarvelService) {}
 
   ngOnInit(): void {
+    this.service.getCreators().subscribe(
+      (res) => {
+        this.creatorsData = res.data.results;
+      },
+      (error) => {}
+    );
   }
-
-  // getCreators() {
-  //   this.service.getCreators().subscribe(res=>{
-  //     console.log(res)
-  //   })
-  // }
-  
 }

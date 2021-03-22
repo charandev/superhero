@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MservicesService } from '../mservices.service';
+import { MarvelService } from '../mservices.service';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrls: ['./events.component.sass']
+  styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
 
-  constructor( private service: MservicesService) {
+  constructor( private service: MarvelService) {
 
  }
 

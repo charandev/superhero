@@ -1,37 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class MservicesService {
+export class MarvelService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  private url = environment.API_URL;
+  private key = environment.API_KEY;
 
-  getCharacters():Observable<any> {
-  return this.http.get("https://gateway.marvel.com:443/v1/public/characters?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-  
+  getCharacters(): Observable<any> {
+    return this.http.get(this.url + 'characters?apikey=' + this.key);
   }
 
-  getCreators():Observable<any> {
-    return this.http.get("https://gateway.marvel.com:443/v1/public/creators?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-    
-    }
-    getStories():Observable<any> {
-      return this.http.get("https://gateway.marvel.com:443/v1/public/stories?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-      
-      }
-      getSeries():Observable<any> {
-        return this.http.get("https://gateway.marvel.com:443/v1/public/series?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-        
-        }
-        getEvents():Observable<any> {
-          return this.http.get("https://gateway.marvel.com:443/v1/public/events?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-          
-          }
-          getComics():Observable<any> {
-            return this.http.get("https://gateway.marvel.com:443/v1/public/comics?apikey=1a0574214b1894a43a9a82f5090b4ee4")
-            
-            }
+  getCreators(): Observable<any> {
+    return this.http.get(this.url + 'creators?apikey=' + this.key);
+  }
+  getStories(): Observable<any> {
+    return this.http.get(this.url + 'stories?apikey=' + this.key);
+  }
+  getSeries(): Observable<any> {
+    return this.http.get(this.url + 'series?apikey=' + this.key);
+  }
+  getEvents(): Observable<any> {
+    return this.http.get(this.url + 'events?apikey=' + this.key);
+  }
+  getComics(): Observable<any> {
+    return this.http.get(this.url + 'comics?apikey=' + this.key);
+  }
 }

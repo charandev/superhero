@@ -1,0 +1,24 @@
+.general-card {
+  float: left;
+  width: 25%;
+  margin: 15px;
+  .header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .header-image {
+    height: 200px;
+  }
+  .description {
+    height: 60px;
+    font-size: 14px;
+    line-height: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+}

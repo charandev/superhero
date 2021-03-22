@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MservicesService } from '../mservices.service';
+import { MarvelService } from '../mservices.service';
 
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.sass']
+  styleUrls: ['./characters.component.scss']
 })
 export class CharactersComponent implements OnInit {
 
-  constructor( private service: MservicesService) {
+  constructor( private service: MarvelService) {
     
    }
 

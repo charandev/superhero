@@ -1,0 +1,17 @@
+<mat-card class="general-card">
+  <mat-card-header class="header">
+    <mat-card-title>{{data.title}}</mat-card-title>
+  </mat-card-header>
+  <img class="header-image"
+    mat-card-image
+    src="{{data.thumbnail.path}}.jpg"
+  />
+  <mat-card-content> 
+    <p class="description" *ngIf = 'data.description'>{{data.description}}</p>
+    <p class="description" *ngIf = '!data.description'>Description not present for this.</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button href='{{data.series.resourceURI}}' target="_blank"> Source</a>
+    <a mat-button href='{{data.urls[0].url}}' target="_blank">Details</a>
+  </mat-card-actions>
+</mat-card>

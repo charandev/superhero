@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { MservicesService } from '../mservices.service';
+import { MarvelService } from '../mservices.service';
 
 @Component({
   selector: 'app-series',
   templateUrl: './series.component.html',
-  styleUrls: ['./series.component.sass']
+  styleUrls: ['./series.component.scss']
 })
 export class SeriesComponent implements OnInit {
 
-  constructor( private service: MservicesService) {
+  constructor( private service: MarvelService) {
 
  }
 
